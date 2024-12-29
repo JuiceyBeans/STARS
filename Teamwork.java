@@ -4,8 +4,8 @@
 /**
  * Details of your team
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Karthi (Ayush) Suresh
+ * @version 29/12/2024
  */
 public class Teamwork
 {
@@ -19,9 +19,9 @@ public class Teamwork
         // If there is only 1 team member, please complete details 
         // for programmer1
         
-        details[0] = "surname of programmer1";
-        details[1] = "first name of programmer1";
-        details[2] = "SRN of programmer1";
+        details[0] = "Suresh";
+        details[1] = "Ayush";
+        details[2] = "23012077";
         details[3] = "surname of programmer2";
         details[4] = "first name of programmer2";
         details[5] = "SRN of programmer2";
