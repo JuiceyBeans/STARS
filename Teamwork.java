@@ -22,9 +22,9 @@ public class Teamwork
         details[0] = "Suresh";
         details[1] = "Ayush";
         details[2] = "23012077";
-        details[3] = "surname of programmer2";
-        details[4] = "first name of programmer2";
-        details[5] = "SRN of programmer2";
+        details[3] = "Alam";
+        details[4] = "Murtaza";
+        details[5] = "21088013";
     }
     
     public String[] getTeamDetails()
