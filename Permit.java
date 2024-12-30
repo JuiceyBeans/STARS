@@ -14,6 +14,13 @@ public class Permit {
     // MAN IT SURE WOULD BE NICE TO BE ABLE TO AUTOGEN GETTERS AND SETTERS
     // Update: You CAN actually do this with IntelliJ, hell yeah
 
+    public Permit(int id, String guestName, int rating, int tokenCount) {
+        this.id = id;
+        this.guestName = guestName;
+        this.rating = rating;
+        this.tokenCount = tokenCount;
+    }
+
     public int getId() {
         return id;
     }
