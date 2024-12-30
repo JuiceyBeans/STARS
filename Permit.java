@@ -10,7 +10,6 @@ public class Permit {
     public String guestName;
     public int rating;
     public int tokenCount;
-    public String testField;
 
     // MAN IT SURE WOULD BE NICE TO BE ABLE TO AUTOGEN GETTERS AND SETTERS
     // Update: You CAN actually do this with IntelliJ, hell yeah
