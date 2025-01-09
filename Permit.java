@@ -18,6 +18,9 @@ public class Permit {
     public Permit(int id, String guestName, int rating, int tokenCount) {
         this.id = id;
         this.guestName = guestName;
+        if (rating < 1 || rating > 10) {
+            throw new IllegalArgumentException("Rating needs to be between 1 and 10");
+        }
         this.rating = rating;
         this.tokenCount = tokenCount;
         this.pointCount = 0;
