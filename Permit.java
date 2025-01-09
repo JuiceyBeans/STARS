@@ -51,10 +51,10 @@ public class Permit {
     public void setTokenCount(int tokenCount) {
         this.tokenCount = tokenCount;
     }
-    public String getPointCount() {
+    public int getPointCount() {
         return pointCount;
     }
-    public void setPointCount(int id) {
+    public void setPointCount(int pointCount) {
         this.pointCount = pointCount;
     }
 }
