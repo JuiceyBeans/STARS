@@ -3,7 +3,7 @@
  * A Permit has an id number, name, a luxury rating, tokens and points.
  * 
  * @author Karthi (Ayush) Suresh
- * @version 29/12/2024
+ * @version 9/1/2025
  */
 public class Permit {
     public int id;
