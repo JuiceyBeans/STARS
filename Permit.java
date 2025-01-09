@@ -72,6 +72,17 @@ public class Permit {
         pointCount %= 4;
     }
 
+    public void shuttleEntry() { // a method to make changes to permit details when a shuttle is entered
+        int shuttleCost = 3;
+        if (tokenCount >= shuttleCost) {
+            removeTokens(shuttleCost);
+            pointCount += 1;
+        } else {
+            throw new IllegalArgumentException("Not enough tokens to use the shuttle");
+        }
+
+    }
+
     @Override
     public String toString() {
         return "Permit{" +
