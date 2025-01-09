@@ -11,7 +11,7 @@ public class Permit {
     public int rating;
     public int tokenCount;
     public int pointCount;
- 
+
     // MAN IT SURE WOULD BE NICE TO BE ABLE TO AUTOGEN GETTERS AND SETTERS
     // Update: You CAN actually do this with IntelliJ, hell yeah
 
@@ -56,5 +56,30 @@ public class Permit {
     }
     public void setPointCount(int pointCount) {
         this.pointCount = pointCount;
+    }
+
+    public void addTokens(int tokens) {
+        this.tokenCount = this.tokenCount + tokens;
+    }
+    public void removeTokens(int tokens) {
+        this.tokenCount = this.tokenCount - tokens;
+    }
+    public float returnPointsToTokens(int points) {
+        return (float) points / 4;
+    }
+    public void convertPointsToTokens() {
+        tokenCount += (pointCount / 4);
+        pointCount %= 4;
+    }
+
+    @Override
+    public String toString() {
+        return "Permit{" +
+                "id=" + id +
+                ", guestName='" + guestName + '\'' +
+                ", rating=" + rating +
+                ", tokenCount=" + tokenCount +
+                ", pointCount=" + pointCount +
+                '}';
     }
 }
