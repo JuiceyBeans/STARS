@@ -40,7 +40,7 @@ public class Permit {
         if (rating <= 10 && rating >= 1) {
             this.rating = rating;
         } else {
-            System.out.println("[ERROR] Rating needs to be between 1 and 10");
+            throw new IllegalArgumentException("Rating needs to be between 1 and 10");
         }
     }
     public int getTokenCount() {
