@@ -16,24 +16,24 @@ import java.util.ArrayList;
  * Each planet has a name, a luxury rating, a capacity, and a list of permits (guests).
  */
 public class Planet {
-    private final int referenceNumber; // Unique ID of the planet
+    private final int id; // Unique ID of the planet
     private final String name; // Planet's name
-    private final int luxuryRating; // Rating from 1 to 10
+    private final int rating; // Rating from 1 to 10
     private final int capacity; // Max number of permits allowed on the planet
     private final ArrayList<Permit> permits; // List of permits currently on the planet
 
     // Constructor
-    public Planet(int referenceNumber, String name, int luxuryRating, int capacity) {
-        this.referenceNumber = referenceNumber;
+    public Planet(int id, String name, int rating, int capacity) {
+        this.id = id;
         this.name = name;
-        this.luxuryRating = luxuryRating;
+        this.rating = rating;
         this.capacity = capacity;
         this.permits = new ArrayList<>();
     }
 
     // Accessor for planet reference number
-    public int getReferenceNumber() {
-        return referenceNumber;
+    public int getId() {
+        return id;
     }
 
     // Accessor for planet name
@@ -42,8 +42,8 @@ public class Planet {
     }
 
     // Accessor for luxury rating
-    public int getLuxuryRating() {
-        return luxuryRating;
+    public int getRating() {
+        return rating;
     }
 
     // Check if the planet has reached its capacity
@@ -94,7 +94,7 @@ public class Planet {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Planet Name: ").append(name)
-                .append(", Rating: ").append(luxuryRating)
+                .append(", Rating: ").append(rating)
                 .append(", Capacity: ").append(capacity)
                 .append(", Current Permits: ").append(permits.size()).append("\n");
 

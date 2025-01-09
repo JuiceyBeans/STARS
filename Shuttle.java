@@ -13,44 +13,44 @@
  * Each shuttle has a unique code and connects a source planet to a destination planet.
  */
 public class Shuttle {
-    private final String shuttleCode; // Unique code for the shuttle
-    private final Planet fromPlanet; // Source planet
-    private final Planet toPlanet; // Destination planet
+    private final String code; // Unique code for the shuttle
+    private final Planet sourcePlanet; // Source planet
+    private final Planet destinationPlanet; // Destination planet
 
     // Constructor
-    public Shuttle(String shuttleCode, Planet fromPlanet, Planet toPlanet) {
-        this.shuttleCode = shuttleCode;
-        this.fromPlanet = fromPlanet;
-        this.toPlanet = toPlanet;
+    public Shuttle(String code, Planet sourcePlanet, Planet destinationPlanet) {
+        this.code = code;
+        this.sourcePlanet = sourcePlanet;
+        this.destinationPlanet = destinationPlanet;
     }
 
     // Accessor for shuttle code
-    public String getShuttleCode() {
-        return shuttleCode;
+    public String getCode() {
+        return code;
     }
 
     // Accessor for source planet
-    public Planet getFromPlanet() {
-        return fromPlanet;
+    public Planet getSource() {
+        return sourcePlanet;
     }
 
     // Accessor for destination planet
-    public Planet getToPlanet() {
-        return toPlanet;
+    public Planet getDestination() {
+        return destinationPlanet;
     }
 
     // Check if a permit can use this shuttle
     public boolean canEnterShuttle(Permit permit) {
-        if (permit.getLuxuryRating() < toPlanet.getLuxuryRating()) {
+        if (permit.getRating() < destinationPlanet.getRating()) {
             return false; // Luxury rating too low
         }
-        if (toPlanet.isFull()) {
+        if (destinationPlanet.isFull()) {
             return false; // Destination planet is full
         }
-        if (!fromPlanet.isPermitOnPlanet(permit)) {
+        if (!sourcePlanet.isPermitOnPlanet(permit)) {
             return false; // Permit is not on the source planet
         }
-        if (!permit.hasEnoughTokens()) {
+        if (!permit.hasTokensForShuttle()) {
             return false; // Not enough tokens
         }
         return true; // All conditions satisfied
@@ -62,18 +62,18 @@ public class Shuttle {
             return "Permit cannot use this shuttle due to unsatisfied conditions.";
         }
 
-        fromPlanet.leave(permit); // Remove from source planet
-        toPlanet.arrive(permit); // Add to destination planet
-        permit.deductTokens(3); // Deduct tokens for the journey
+        sourcePlanet.leave(permit); // Remove from source planet
+        destinationPlanet.arrive(permit); // Add to destination planet
+        permit.removeTokens(3); // Deduct tokens for the journey
         permit.addPoints(1); // Add points for the journey
-        return "Permit " + permit.getId() + " successfully moved to " + toPlanet.getName();
+        return "Permit " + permit.getId() + " successfully moved to " + destinationPlanet.getName();
     }
 
     // Override toString to include shuttle details
     @Override
     public String toString() {
-        return "Shuttle [Code: " + shuttleCode +
-                ", From: " + fromPlanet.getName() +
-                ", To: " + toPlanet.getName() + "]";
+        return "Shuttle [Code: " + code +
+                ", From: " + sourcePlanet.getName() +
+                ", To: " + destinationPlanet.getName() + "]";
     }
 }
