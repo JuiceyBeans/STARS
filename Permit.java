@@ -85,6 +85,9 @@ public class Permit {
         int tokenCount = this.getTokenCount();
         return tokenCount >= shuttleCost;
     }
+    public boolean hasTokensForShuttle() {
+        return hasTokensForShuttle(3);
+    }
 
     public void shuttleEntry() { // a method to make changes to permit details when a shuttle is entered
         int shuttleCost = 3;
