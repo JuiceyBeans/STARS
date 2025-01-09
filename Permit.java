@@ -66,6 +66,12 @@ public class Permit {
     public void removeTokens(int tokens) {
         this.tokenCount = this.tokenCount - tokens;
     }
+    public void addPoints(int points) {
+        this.pointCount = this.pointCount + points;
+    }
+    public void removePoints(int tokens) {
+        this.pointCount = this.pointCount - points;
+    }
 
     /**
      * @return How many tokens can be obtained by converting points
