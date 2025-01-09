@@ -1,4 +1,3 @@
- 
 /**
  * A Permit has an id number, name, a luxury rating, tokens and points.
  * 
@@ -6,11 +5,11 @@
  * @version 9/1/2025
  */
 public class Permit {
-    public int id;
-    public String guestName;
-    public int rating;
-    public int tokenCount;
-    public int pointCount;
+    private int id;
+    private String guestName;
+    private int rating;
+    private int tokenCount;
+    private int pointCount;
 
     // MAN IT SURE WOULD BE NICE TO BE ABLE TO AUTOGEN GETTERS AND SETTERS
     // Update: You CAN actually do this with IntelliJ, hell yeah
