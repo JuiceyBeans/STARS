@@ -69,7 +69,7 @@ public class Permit {
     public void addPoints(int points) {
         this.pointCount = this.pointCount + points;
     }
-    public void removePoints(int tokens) {
+    public void removePoints(int points) {
         this.pointCount = this.pointCount - points;
     }
 
