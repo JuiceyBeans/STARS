@@ -72,15 +72,19 @@ public class Permit {
         pointCount %= 4;
     }
 
+    public boolean hasTokensForShuttle(int shuttleCost) {
+        int tokenCount = this.getTokenCount();
+        return tokenCount >= shuttleCost;
+    }
+
     public void shuttleEntry() { // a method to make changes to permit details when a shuttle is entered
         int shuttleCost = 3;
-        if (tokenCount >= shuttleCost) {
+        if (hasTokensForShuttle(shuttleCost)) {
             removeTokens(shuttleCost);
             pointCount += 1;
         } else {
             throw new IllegalArgumentException("Not enough tokens to use the shuttle");
         }
-
     }
 
     @Override
