@@ -99,12 +99,13 @@ public class Planet {
                 .append(", Current Permits: ").append(permits.size()).append("\n");
 
         if (!permits.isEmpty()) {
-            builder.append("Permits:\n");
+            builder.append("Permits for " + name + ":\n");
             for (Permit permit : permits) {
                 builder.append("  ").append(permit.toString()).append("\n");
             }
+            builder.append("\n");
         } else {
-            builder.append("No permits on this planet.");
+            builder.append("No permits on this planet\n\n");
         }
 
         return builder.toString();
