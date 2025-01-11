@@ -37,8 +37,8 @@ public class PermitTester {
         testPermit3.setRating(1);
         System.out.println("Rating: " + testPermit3.getRating());
         // Exception testing
-        // testPermit3.setRating(13);
-        // testPermit3.shuttleEntry();
+        /* testPermit3.setRating(13);
+        testPermit3.shuttleEntry(); */
         System.out.println("Token count: " + testPermit3.getTokenCount());
         System.out.println("Point count: " + testPermit3.getPointCount());
         testPermit3.addTokens(3);

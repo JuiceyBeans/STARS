@@ -5,7 +5,7 @@
  * @version 9/1/2025
  */
 public class Permit {
-    private int id;
+    private int id; // todo dont allow to use same id for multiple permits
     private String guestName;
     private int rating;
     private int tokenCount;
